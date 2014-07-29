@@ -1,0 +1,17 @@
+{
+	"name"       : "cftp/mlp-acf-compat",
+	"description": "ACF MLP Compat",
+	"keywords"   : ["wordpress"],
+	"type"       : "wordpress-plugin",
+	"license"    : "GPL-2.0",
+	"authors"    : [
+	{
+		"name"    : "Code For The People",
+		"homepage": "http://codeforthepeople.com"
+	}
+	],
+	"require"    : {
+		"php": ">=5.2.4",
+		"composer/installers": "~1.0"
+	}
+}
