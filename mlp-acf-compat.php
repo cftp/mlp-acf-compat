@@ -37,6 +37,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 class CFTP_MLP_ACF_Fixes {
 
 	/**
+	 * The original blog ID, e.g. the blog ID 
+	 * relating to this request URL.
+	 *
+	 * @var string
+	 **/
+	protected $original_blog_id;
+
+	/**
+	 * Somewhere to sequester the ACF nonce
+	 *
+	 * @var string
+	 **/
+	protected $acf_nonce;
+
+	/**
 	 * Singleton stuff.
 	 *
 	 * @access @static
@@ -63,6 +78,8 @@ class CFTP_MLP_ACF_Fixes {
 		add_filter( 'mlp_pre_insert_post_meta', array( $this, 'filter_mlp_pre_insert_post_meta' ), 10, 2 );
 		add_action( 'switch_blog', array( $this, 'action_switch_blog' ), 10, 2 );
 
+		$this->acf_nonce = false;
+		$this->original_blog_id = false;
 		$this->acf_nonce = false;
 	}
 
